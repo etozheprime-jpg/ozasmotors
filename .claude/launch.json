@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "ozasmotors", "runtimeExecutable": "npx", "runtimeArgs": ["--yes", "serve", ".", "-l", "5173", "--no-port-switching"], "port": 5173 }
+  ]
+}

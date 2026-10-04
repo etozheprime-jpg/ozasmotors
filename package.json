@@ -1,0 +1,12 @@
+{
+  "name": "ozasmotors",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OZASMOTORS — automobilių supirkimas Vilniuje. Statinė svetainė be surinkimo žingsnio.",
+  "scripts": {
+    "dev": "npx --yes serve . -l 5173",
+    "start": "npx --yes serve . -l 5173",
+    "build": "echo \"Surinkimo nereikia — projektas jau statinis. Deploy'inkite šio katalogo turinį.\""
+  },
+  "license": "UNLICENSED"
+}

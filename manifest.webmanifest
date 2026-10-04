@@ -1,0 +1,36 @@
+{
+  "name": "OZASMOTORS — automobilių supirkimas",
+  "short_name": "OZASMOTORS",
+  "description": "Automobilių supirkimas Vilniuje ir visoje Lietuvoje. Pateikite automobilį įvertinimui per kelias minutes.",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#0a0a0b",
+  "theme_color": "#0a0a0b",
+  "lang": "lt",
+  "dir": "ltr",
+  "categories": ["business", "shopping", "automotive"],
+  "icons": [
+    { "src": "/public/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/public/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/public/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/public/icons/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Pateikti automobilį",
+      "short_name": "Anketa",
+      "url": "/?source=pwa#forma",
+      "icons": [{ "src": "/public/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Kontaktai",
+      "short_name": "Kontaktai",
+      "url": "/?source=pwa#kontaktai",
+      "icons": [{ "src": "/public/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
