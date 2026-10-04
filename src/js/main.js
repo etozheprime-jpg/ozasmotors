@@ -244,7 +244,7 @@ function initSW() {
   // Vietinio kūrimo metu SW tik trukdo — naudojamas tik realiame domene.
   if (['localhost', '127.0.0.1', '::1'].includes(location.hostname)) return;
   addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch((e) => console.warn('SW:', e));
+    navigator.serviceWorker.register('./sw.js').catch((e) => console.warn('SW:', e));
   });
 }
 

@@ -3,23 +3,25 @@ const VERSION = 'ozm-v1';
 const PRECACHE = VERSION + '-precache';
 const RUNTIME = VERSION + '-runtime';
 
+// Keliai santykiniai registracijos vietos atžvilgiu — veikia ir domeno šaknyje,
+// ir subkataloge (pvz. GitHub Pages).
 const PRECACHE_URLS = [
-  '/',
-  '/index.html',
-  '/offline.html',
-  '/manifest.webmanifest',
-  '/src/styles/main.css?v=5',
-  '/src/js/main.js?v=5',
-  '/src/js/form.js',
-  '/src/js/uploads.js',
-  '/src/js/api.js',
-  '/src/js/config.js',
-  '/src/js/analytics.js',
-  '/public/images/logo-wordmark-alpha.png',
-  '/public/images/hero-poster.jpg',
-  '/public/icons/icon-192.png',
-  '/public/icons/icon-512.png',
-];
+  './',
+  './index.html',
+  './offline.html',
+  './manifest.webmanifest',
+  './src/styles/main.css?v=5',
+  './src/js/main.js?v=5',
+  './src/js/form.js',
+  './src/js/uploads.js',
+  './src/js/api.js',
+  './src/js/config.js',
+  './src/js/analytics.js',
+  './public/images/logo-wordmark-alpha.png',
+  './public/images/hero-poster.jpg',
+  './public/icons/icon-192.png',
+  './public/icons/icon-512.png',
+].map((u) => new URL(u, self.registration.scope).toString());
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -45,7 +47,7 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(request.url);
   if (url.origin !== location.origin) return;      // trečiųjų šalių turinio nekešuojame
-  if (url.pathname.startsWith('/public/videos/')) return; // video — tiesiai iš tinklo
+  if (url.pathname.includes('/public/videos/')) return; // video — tiesiai iš tinklo
 
   // HTML: network-first, kad turinys visada būtų šviežias
   if (request.mode === 'navigate' || request.headers.get('accept')?.includes('text/html')) {
@@ -56,7 +58,7 @@ self.addEventListener('fetch', (event) => {
           caches.open(RUNTIME).then((c) => c.put(request, copy));
           return res;
         })
-        .catch(() => caches.match(request).then((r) => r || caches.match('/offline.html')))
+        .catch(() => caches.match(request).then((r) => r || caches.match(new URL('./offline.html', self.registration.scope).toString())))
     );
     return;
   }

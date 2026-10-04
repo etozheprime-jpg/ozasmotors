@@ -60,6 +60,17 @@ Serveryje rekomenduojama:
 
 > `serve.json` yra tik vietiniam kūrimui (išjungia talpyklą) — gamybai jis nieko nedaro.
 
+### GitHub Pages
+Repozitorijoje: **Settings → Pages → Source: Deploy from a branch → `main` / `/ (root)`**.
+Po kelių minučių svetainė pasiekiama adresu `https://<vartotojas>.github.io/ozasmotors/`.
+
+> Visi keliai svetainėje yra **santykiniai**, todėl ji vienodai veikia ir domeno šaknyje
+> (`ozasmotors.lt`), ir subkataloge (`.../ozasmotors/`). Nekeiskite jų į `/src/...` —
+> tada subkataloge nustotų veikti stiliai, JS ir PWA.
+>
+> `canonical` sąmoningai rodo į `https://ozasmotors.lt/`, todėl Google indeksuos tikrąjį
+> domeną, o ne GitHub Pages peržiūrą. Perkėlus svetainę į realų domeną nieko keisti nereikia.
+
 ---
 
 ## 4. Ką reikia pakeisti prieš paleidžiant
